@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#123b36">
+  <meta name="description" content="A visual guide to ten unforgettable places in Abha, Saudi Arabia.">
+  <title>Abha, in season — a visual local guide</title>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #18342f;
+      --ink-soft: #47615b;
+      --cream: #f8f3ea;
+      --paper: #fffdfa;
+      --pine: #123b36;
+      --pine-deep: #082d29;
+      --sage: #c6d5b4;
+      --ochre: #d88632;
+      --coral: #c65f3c;
+      --line: rgba(24, 52, 47, .16);
+      --shadow: 0 20px 50px rgba(21, 50, 44, .12);
+      --radius: 22px;
+      --sans: "DM Sans", Arial, sans-serif;
+      --serif: "Playfair Display", Georgia, serif;
+      --mono: "DM Mono", monospace;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-width: 320px;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.5;
+    }
+    button, a { font: inherit; }
+    button { cursor: pointer; }
+    a { color: inherit; }
+    .skip-link {
+      position: fixed; left: 1rem; top: -4rem; z-index: 10;
+      padding: .75rem 1rem; background: var(--paper); border: 2px solid var(--pine); border-radius: .5rem;
+    }
+    .skip-link:focus { top: 1rem; }
+    :focus-visible { outline: 3px solid var(--ochre); outline-offset: 3px; }
+
+    .site-header {
+      position: absolute; z-index: 2; top: 0; left: 0; right: 0;
+      display: flex; justify-content: space-between; align-items: center;
+      max-width: 1440px; margin: 0 auto; padding: 1.4rem clamp(1.25rem, 4vw, 4.5rem);
+      color: #fff;
+    }
+    .brand {
+      display: inline-flex; align-items: center; gap: .7rem; text-decoration: none;
+      font-family: var(--serif); font-size: 1.3rem; font-weight: 700;
+    }
+    .brand-mark { width: 30px; height: 30px; }
+    .header-note { font-size: .77rem; text-transform: uppercase; letter-spacing: .12em; font-weight: 700; }
+
+    .hero {
+      position: relative; overflow: hidden; min-height: 690px; min-height: 93svh; color: #fff;
+      display: flex; align-items: end; isolation: isolate;
+      background: var(--pine-deep);
+    }
+    .hero::before {
+      content: ""; position: absolute; inset: 0; z-index: -2;
+      background: linear-gradient(90deg, rgba(3, 31, 28, .8) 0%, rgba(3, 31, 28, .38) 56%, rgba(3, 31, 28, .15) 100%),
+        url("https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1900&q=88") center/cover;
+    }
+    .hero::after {
+      content: ""; position: absolute; z-index: -1; inset: auto -10% -8rem 35%; height: 15rem;
+      background: radial-gradient(ellipse, rgba(198, 213, 180, .47), transparent 65%); filter: blur(12px);
+    }
+    .hero-inner { width: min(1320px, 100%); margin: auto; padding: 8rem clamp(1.25rem, 7vw, 7.5rem) 4.3rem; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: .65rem; margin: 0 0 1.25rem;
+      color: #f6d7ad; font-family: var(--mono); text-transform: uppercase; letter-spacing: .13em; font-size: .72rem;
+    }
+    .eyebrow::before { content: ""; width: 2.35rem; height: 1px; background: currentColor; }
+    h1 { max-width: 850px; margin: 0; font: 700 clamp(3.7rem, 8.1vw, 8rem)/.91 var(--serif); letter-spacing: -.06em; }
+    .hero-copy { max-width: 35rem; margin: 1.75rem 0 0; font-size: clamp(1.03rem, 1.6vw, 1.22rem); color: #f1f2e8; }
+    .hero-foot { display: flex; justify-content: space-between; gap: 1rem; align-items: end; margin-top: 4.3rem; }
+    .hero-foot p { max-width: 15rem; margin: 0; font-size: .88rem; color: #dce7db; }
+    .scroll-cue { display: inline-flex; align-items: center; gap: .55rem; text-decoration: none; color: #fff; font-size: .84rem; }
+    .scroll-cue svg { animation: drift 1.8s ease-in-out infinite; }
+
+    main { overflow: hidden; }
+    .intro { display: grid; grid-template-columns: 1.3fr .8fr; gap: 4rem; max-width: 1280px; margin: 0 auto; padding: clamp(4.5rem, 9vw, 8.5rem) clamp(1.25rem, 5vw, 4rem) 4rem; }
+    .section-label { display: block; margin-bottom: 1.1rem; color: var(--coral); font: 500 .74rem var(--mono); text-transform: uppercase; letter-spacing: .13em; }
+    h2 { margin: 0; font: 700 clamp(2.1rem, 4.1vw, 4rem)/1.02 var(--serif); letter-spacing: -.045em; }
+    .intro-copy { align-self: end; color: var(--ink-soft); font-size: 1.08rem; }
+    .intro-copy p { margin: 0; max-width: 32rem; }
+
+    .explore { max-width: 1440px; margin: 0 auto; padding: 0 clamp(1.25rem, 5vw, 4rem) 6rem; }
+    .controls { display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: end; padding: 2rem 0 1.5rem; border-top: 1px solid var(--line); }
+    .control-title { display: block; margin-bottom: .75rem; color: var(--ink-soft); font: 500 .72rem var(--mono); text-transform: uppercase; letter-spacing: .1em; }
+    .filter-list, .month-list { display: flex; flex-wrap: wrap; gap: .55rem; }
+    .filter-btn, .month-btn {
+      min-height: 44px; padding: .58rem .95rem; border: 1px solid var(--line); border-radius: 999px;
+      background: transparent; color: var(--ink); transition: background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
+    }
+    .filter-btn:hover, .month-btn:hover { transform: translateY(-1px); border-color: var(--pine); }
+    .filter-btn[aria-pressed="true"] { background: var(--pine); border-color: var(--pine); color: #fff; }
+    .month-btn { min-width: 44px; padding-inline: .75rem; font: 500 .78rem var(--mono); }
+    .month-btn[aria-pressed="true"] { background: var(--ochre); border-color: var(--ochre); color: #251609; }
+    .month-wrap { min-width: min(100%, 360px); }
+    .result-line { min-height: 1.5rem; margin: 1.35rem 0 1.55rem; color: var(--ink-soft); font-size: .9rem; }
+    .result-line strong { color: var(--ink); }
+
+    .places-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1.35rem; }
+    .place-card { grid-column: span 4; min-width: 0; transition: opacity .22s ease, transform .22s ease; }
+    .place-card:nth-child(1), .place-card:nth-child(6) { grid-column: span 5; }
+    .place-card:nth-child(2), .place-card:nth-child(7) { grid-column: span 7; }
+    .place-card.is-hidden { display: none; }
+    .place-card.is-match { animation: rise .38s both; }
+    .photo-link { position: relative; display: block; overflow: hidden; aspect-ratio: 1.24 / 1; border-radius: var(--radius); background: #d8e1d1; }
+    .place-card:nth-child(2) .photo-link, .place-card:nth-child(7) .photo-link { aspect-ratio: 1.85 / 1; }
+    .photo-link img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; }
+    .photo-link:hover img { transform: scale(1.045); }
+    .card-topline { position: absolute; top: 1rem; left: 1rem; right: 1rem; display: flex; justify-content: space-between; gap: .5rem; align-items: start; }
+    .category { display: inline-flex; padding: .38rem .6rem; border-radius: 999px; background: rgba(255, 253, 250, .91); color: var(--pine); font: 500 .68rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+    .number { color: #fff; font: 500 .7rem var(--mono); text-shadow: 0 1px 6px rgba(0,0,0,.45); }
+    .card-content { padding: 1rem .2rem .5rem; }
+    .card-title { margin: 0; font: 700 clamp(1.55rem, 2.4vw, 2.15rem)/1.05 var(--serif); letter-spacing: -.03em; }
+    .card-description { margin: .5rem 0 .8rem; max-width: 36rem; color: var(--ink-soft); font-size: .93rem; }
+    .card-meta { display: flex; justify-content: space-between; gap: .75rem; align-items: center; padding-top: .75rem; border-top: 1px solid var(--line); }
+    .best-months { color: var(--ink-soft); font: 500 .7rem var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+    .map-link { display: inline-flex; gap: .35rem; align-items: center; color: var(--pine); font-size: .84rem; font-weight: 700; text-underline-offset: .18em; }
+    .map-link svg { width: 14px; height: 14px; }
+
+    .day-planner { position: relative; overflow: hidden; background: var(--pine); color: #fff; }
+    .day-planner::after { content: ""; position: absolute; width: 42rem; height: 42rem; right: -13rem; top: -24rem; border-radius: 50%; background: radial-gradient(circle, rgba(216,134,50,.55), transparent 65%); }
+    .planner-inner { position: relative; z-index: 1; display: grid; grid-template-columns: .8fr 1.2fr; gap: clamp(2.5rem, 6vw, 7rem); max-width: 1280px; margin: 0 auto; padding: clamp(4.5rem, 9vw, 7rem) clamp(1.25rem, 5vw, 4rem); }
+    .planner-intro { align-self: center; }
+    .planner-intro .section-label { color: #e8c281; }
+    .planner-intro h2 { max-width: 12ch; }
+    .planner-intro p { max-width: 28rem; color: #d4e2d8; }
+    .plan-button { min-height: 48px; margin-top: .8rem; padding: .7rem 1.05rem; border: 1px solid #fff; border-radius: .35rem; background: #fff; color: var(--pine); font-weight: 700; transition: background .18s ease, color .18s ease, transform .18s ease; }
+    .plan-button:hover { background: transparent; color: #fff; transform: translateY(-1px); }
+    .trip-card { position: relative; min-height: 330px; padding: clamp(1.3rem, 3vw, 2rem); border: 1px solid rgba(255,255,255,.22); background: rgba(5, 38, 34, .72); box-shadow: 0 18px 50px rgba(0,0,0,.16); backdrop-filter: blur(8px); }
+    .trip-title-row { display: flex; gap: 1rem; justify-content: space-between; align-items: center; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,.2); }
+    .trip-title-row h3 { margin: 0; font: 600 1.35rem var(--serif); }
+    .trip-title-row span { color: #e6c990; font: .7rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .plan-stops { display: grid; gap: 0; margin: .5rem 0 0; padding: 0; list-style: none; }
+    .plan-stop { position: relative; display: grid; grid-template-columns: 5.7rem 1fr; gap: 1rem; padding: 1.1rem 0 1.1rem 1rem; border-bottom: 1px solid rgba(255,255,255,.16); }
+    .plan-stop:last-child { border-bottom: 0; }
+    .plan-stop::before { content: ""; position: absolute; left: 0; top: 1.35rem; width: 7px; height: 7px; border: 2px solid #f0c576; border-radius: 50%; }
+    .plan-time { color: #f0c576; font: .68rem var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .plan-stop h4 { margin: 0; font: 600 1rem var(--sans); }
+    .plan-stop p { margin: .15rem 0 0; color: #d4e2d8; font-size: .82rem; }
+    .plan-empty { margin: 3.5rem 0; color: #d4e2d8; text-align: center; }
+
+    footer { display: flex; justify-content: space-between; gap: 2rem; align-items: center; max-width: 1280px; margin: 0 auto; padding: 2rem clamp(1.25rem, 5vw, 4rem); color: var(--ink-soft); font-size: .82rem; }
+    .footer-brand { font: 700 1rem var(--serif); color: var(--ink); }
+    .source-note { max-width: 44rem; text-align: right; }
+
+    @keyframes rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes drift { 50% { transform: translateY(5px); } }
+    @media (max-width: 860px) {
+      .hero { min-height: 650px; }
+      .intro, .planner-inner { grid-template-columns: 1fr; gap: 2rem; }
+      .controls { grid-template-columns: 1fr; gap: 1.3rem; }
+      .month-wrap { min-width: 0; }
+      .place-card, .place-card:nth-child(1), .place-card:nth-child(2), .place-card:nth-child(6), .place-card:nth-child(7) { grid-column: span 6; }
+      .place-card:nth-child(2) .photo-link, .place-card:nth-child(7) .photo-link { aspect-ratio: 1.24 / 1; }
+      .footer { align-items: start; flex-direction: column; }
+      .source-note { text-align: left; }
+    }
+    @media (max-width: 560px) {
+      .site-header { padding-top: 1.1rem; }
+      .header-note { display: none; }
+      .hero { min-height: 600px; }
+      .hero-inner { padding-bottom: 2.5rem; }
+      h1 { font-size: clamp(3.4rem, 17vw, 5.2rem); }
+      .hero-foot { margin-top: 3rem; }
+      .hero-foot p { display: none; }
+      .places-grid { grid-template-columns: 1fr; gap: 1.9rem; }
+      .place-card, .place-card:nth-child(n) { grid-column: auto; }
+      .place-card:nth-child(2) .photo-link, .place-card:nth-child(7) .photo-link, .photo-link { aspect-ratio: 1.18 / 1; }
+      .card-title { font-size: 1.8rem; }
+      .card-meta { align-items: start; flex-direction: column; }
+      .plan-stop { grid-template-columns: 4.4rem 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#places">Skip to places</a>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Abha in Season home">
+      <svg class="brand-mark" viewBox="0 0 36 36" fill="none" aria-hidden="true"><path d="M5 27.5 15.2 8l5 10.2 3.3-5.6L31 27.5" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 28.5h26" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"/></svg>
+      Abha, in season
+    </a>
+    <span class="header-note">A visual local guide</span>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="page-title">
+      <div class="hero-inner">
+        <p class="eyebrow">Asir Region · Saudi Arabia</p>
+        <h1 id="page-title">Where the mountains keep their own weather.</h1>
+        <p class="hero-copy">Ten places for misty mornings, long lunches, stone villages and the kind of views that make you stop the car.</p>
+        <div class="hero-foot">
+          <p>Save this guide for your next slow weekend in Abha.</p>
+          <a class="scroll-cue" href="#places">Explore places <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M10 3v13m0 0 5-5m-5 5-5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="intro" aria-labelledby="places-heading">
+      <div>
+        <span class="section-label">The little list</span>
+        <h2 id="places-heading">A different kind of Saudi summer.</h2>
+      </div>
+      <div class="intro-copy"><p>Abha is at its best when the air turns cool. This edit brings together the green peaks, heritage corners and tables worth lingering at — all ready for your map.</p></div>
+    </section>
+
+    <section class="explore" id="places" aria-label="Explore Abha places">
+      <div class="controls">
+        <div>
+          <span class="control-title">Find your kind of day</span>
+          <div class="filter-list" aria-label="Filter places by type">
+            <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">All places</button>
+            <button class="filter-btn" type="button" data-filter="nature" aria-pressed="false">Nature</button>
+            <button class="filter-btn" type="button" data-filter="food" aria-pressed="false">Food</button>
+            <button class="filter-btn" type="button" data-filter="heritage" aria-pressed="false">Heritage</button>
+          </div>
+        </div>
+        <div class="month-wrap">
+          <span class="control-title">Best in a month</span>
+          <div class="month-list" aria-label="Filter places by best month">
+            <button class="month-btn" type="button" data-month="all" aria-pressed="true" aria-label="Show all months">All</button>
+            <button class="month-btn" type="button" data-month="Jan" aria-pressed="false">Jan</button><button class="month-btn" type="button" data-month="Feb" aria-pressed="false">Feb</button><button class="month-btn" type="button" data-month="Mar" aria-pressed="false">Mar</button><button class="month-btn" type="button" data-month="Apr" aria-pressed="false">Apr</button><button class="month-btn" type="button" data-month="May" aria-pressed="false">May</button><button class="month-btn" type="button" data-month="Jun" aria-pressed="false">Jun</button><button class="month-btn" type="button" data-month="Jul" aria-pressed="false">Jul</button><button class="month-btn" type="button" data-month="Aug" aria-pressed="false">Aug</button><button class="month-btn" type="button" data-month="Sep" aria-pressed="false">Sep</button><button class="month-btn" type="button" data-month="Oct" aria-pressed="false">Oct</button><button class="month-btn" type="button" data-month="Nov" aria-pressed="false">Nov</button><button class="month-btn" type="button" data-month="Dec" aria-pressed="false">Dec</button>
+          </div>
+        </div>
+      </div>
+      <p class="result-line" id="result-line" role="status" aria-live="polite"><strong>10 places</strong> waiting to be explored.</p>
+      <div class="places-grid" id="places-grid"></div>
+    </section>
+
+    <section class="day-planner" aria-labelledby="planner-heading">
+      <div class="planner-inner">
+        <div class="planner-intro">
+          <span class="section-label">One day, nicely spent</span>
+          <h2 id="planner-heading">Leave the choosing to us.</h2>
+          <p>A no-rush day in Abha: a viewpoint to begin, a local lunch, and one more place before the light leaves.</p>
+          <button class="plan-button" id="plan-button" type="button">Plan my day <span aria-hidden="true">→</span></button>
+        </div>
+        <article class="trip-card" aria-live="polite" aria-atomic="true" aria-labelledby="trip-card-heading">
+          <div class="trip-title-row"><h3 id="trip-card-heading">Your mini trip</h3><span id="trip-season">Tap to create</span></div>
+          <div id="trip-content"><p class="plan-empty">A morning, lunch and evening will appear here.</p></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <span class="footer-brand">Abha, in season</span>
+    <span class="source-note">A hand-picked visual guide. Weather, opening times and road access can change — check before you go.</span>
+  </footer>
+
+  <script>
+    const places = [
+      { id: 1, name: "Al Soudah", type: "nature", category: "Nature", months: ["Jun", "Jul", "Aug", "Sep"], best: "Jun — Sep", note: "Cool mist, tall junipers and the highest views in Saudi Arabia.", map: "Al Soudah, Saudi Arabia", image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=85", time: "morning" },
+      { id: 2, name: "Rijal Almaa", type: "heritage", category: "Heritage", months: ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar"], best: "Oct — Mar", note: "A storybook village of stone towers, coloured windows and mountain air.", map: "Rijal Almaa Heritage Village, Saudi Arabia", image: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1500&q=85", time: "evening" },
+      { id: 3, name: "Abha Dam Lake", type: "nature", category: "Nature", months: ["Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"], best: "Mar — Oct", note: "A gentle waterside pause, with picnic spots and mountain silhouettes.", map: "Abha Dam Lake, Saudi Arabia", image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=85", time: "morning" },
+      { id: 4, name: "Al Muftaha Village", type: "heritage", category: "Heritage", months: ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar"], best: "Oct — Mar", note: "Traditional Asiri facades, art galleries and painted geometric details.", map: "Al Muftaha Village, Abha, Saudi Arabia", image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85", time: "evening" },
+      { id: 5, name: "Art Street", type: "food", category: "Food + culture", months: ["Jun", "Jul", "Aug", "Sep"], best: "Jun — Sep", note: "Take the long way: murals, shaded café tables and a lively evening stroll.", map: "Art Street, Abha, Saudi Arabia", image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85", time: "lunch" },
+      { id: 6, name: "Habala Village", type: "heritage", category: "Heritage", months: ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr"], best: "Oct — Apr", note: "A cliffside village whose old stone homes seem to hold onto the mountain.", map: "Habala Village, Saudi Arabia", image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1300&q=85", time: "morning" },
+      { id: 7, name: "Aseer National Park", type: "nature", category: "Nature", months: ["Jun", "Jul", "Aug", "Sep", "Oct"], best: "Jun — Oct", note: "Wide green valleys and pine-scented roads made for a window-down drive.", map: "Aseer National Park, Saudi Arabia", image: "https://images.unsplash.com/photo-1443632864897-14973fa006cf?auto=format&fit=crop&w=1500&q=85", time: "morning" },
+      { id: 8, name: "Shamsan Ottoman Castle", type: "heritage", category: "Heritage", months: ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar"], best: "Oct — Mar", note: "A small historic lookout with a fine view across the city and hills.", map: "Shamsan Ottoman Castle, Abha, Saudi Arabia", image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=85", time: "evening" },
+      { id: 9, name: "Al Habbala Viewpoint", type: "nature", category: "Nature", months: ["Jun", "Jul", "Aug", "Sep", "Oct"], best: "Jun — Oct", note: "Come for the clouds rolling below the ridge — bring a warm layer.", map: "Al Habbala Viewpoint, Saudi Arabia", image: "https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1200&q=85", time: "evening" },
+      { id: 10, name: "Al Qura Restaurant", type: "food", category: "Food", months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], best: "All year", note: "Make lunch about regional flavours, warm bread and a table that lingers.", map: "Al Qura Restaurant, Abha, Saudi Arabia", image: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=85", time: "lunch" }
+    ];
+
+    const grid = document.querySelector("#places-grid");
+    const resultLine = document.querySelector("#result-line");
+    const filterButtons = document.querySelectorAll(".filter-btn");
+    const monthButtons = document.querySelectorAll(".month-btn");
+    let activeFilter = "all";
+    let activeMonth = "all";
+
+    const mapIcon = '<svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 3h7v7M21 3l-9 9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+    function placeCard(place) {
+      const months = place.months.join(" ");
+      return `<article class="place-card is-match" data-type="${place.type}" data-months="${months}">
+        <a class="photo-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.map)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${place.name} in Google Maps">
+          <img src="${place.image}" alt="Scenic image representing ${place.name}" width="1200" height="900" loading="lazy">
+          <span class="card-topline"><span class="category">${place.category}</span><span class="number">0${place.id}</span></span>
+        </a>
+        <div class="card-content">
+          <h3 class="card-title">${place.name}</h3>
+          <p class="card-description">${place.note}</p>
+          <div class="card-meta"><span class="best-months">Best: ${place.best}</span><a class="map-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.map)}" target="_blank" rel="noopener noreferrer">Open in Maps ${mapIcon}</a></div>
+        </div>
+      </article>`;
+    }
+
+    function renderPlaces() {
+      grid.innerHTML = places.map(placeCard).join("");
+      applyFilters();
+    }
+
+    function applyFilters() {
+      const cards = [...grid.querySelectorAll(".place-card")];
+      let count = 0;
+      cards.forEach((card, index) => {
+        const matchingType = activeFilter === "all" || card.dataset.type === activeFilter;
+        const matchingMonth = activeMonth === "all" || card.dataset.months.split(" ").includes(activeMonth);
+        const matches = matchingType && matchingMonth;
+        card.classList.toggle("is-hidden", !matches);
+        card.classList.toggle("is-match", matches);
+        if (matches) {
+          card.style.animationDelay = `${Math.min(count, 6) * 45}ms`;
+          count++;
+        }
+      });
+      const typeName = activeFilter === "all" ? "places" : activeFilter;
+      const monthName = activeMonth === "all" ? "" : ` in ${activeMonth}`;
+      resultLine.innerHTML = count ? `<strong>${count} ${count === 1 ? "place" : "places"}</strong> for ${typeName}${monthName}.` : `No places match this combination yet. Try a different filter.`;
+    }
+
+    function setActive(buttons, selected) {
+      buttons.forEach(button => button.setAttribute("aria-pressed", String(button === selected)));
+    }
+
+    filterButtons.forEach(button => button.addEventListener("click", () => {
+      activeFilter = button.dataset.filter;
+      setActive(filterButtons, button);
+      applyFilters();
+    }));
+
+    monthButtons.forEach(button => button.addEventListener("click", () => {
+      activeMonth = button.dataset.month;
+      setActive(monthButtons, button);
+      applyFilters();
+    }));
+
+    const tripContent = document.querySelector("#trip-content");
+    const tripSeason = document.querySelector("#trip-season");
+    document.querySelector("#plan-button").addEventListener("click", () => {
+      const pool = activeMonth === "all" ? places : places.filter(place => place.months.includes(activeMonth));
+      const pick = time => {
+        const options = pool.filter(place => place.time === time);
+        const fallback = pool.length ? pool : places;
+        return (options.length ? options : fallback)[Math.floor(Math.random() * (options.length ? options.length : fallback.length))];
+      };
+      const morning = pick("morning"), lunch = pick("lunch"), evening = pick("evening");
+      const stops = [
+        ["Morning", "09:00", morning, "Start slowly, while the air is cool."],
+        ["Lunch", "13:00", lunch, "Take a seat and give yourself time."],
+        ["Evening", "17:30", evening, "End with the view as the light changes."]
+      ];
+      tripContent.innerHTML = `<ol class="plan-stops">${stops.map(([label, time, place, note]) => `<li class="plan-stop"><div class="plan-time">${label}<br>${time}</div><div><h4>${place.name}</h4><p>${note}</p></div></li>`).join("")}</ol>`;
+      tripSeason.textContent = activeMonth === "all" ? "A good-day edit" : `Best for ${activeMonth}`;
+    });
+
+    renderPlaces();
+  </script>
+</body>
+</html>
