@@ -6,7 +6,6 @@
   <meta name="theme-color" content="#123b36">
   <meta name="description" content="A visual guide to ten unforgettable places in Abha, Saudi Arabia.">
   <title>Abha, in season — a visual local guide</title>
-  <link rel="preconnect" href="https://images.unsplash.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap" rel="stylesheet">
@@ -70,8 +69,8 @@
     }
     .hero::before {
       content: ""; position: absolute; inset: 0; z-index: -2;
-      background: linear-gradient(90deg, rgba(3, 31, 28, .8) 0%, rgba(3, 31, 28, .38) 56%, rgba(3, 31, 28, .15) 100%),
-        url("https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=1900&q=88") center/cover;
+      background: linear-gradient(90deg, rgba(3, 31, 28, .82) 0%, rgba(3, 31, 28, .43) 56%, rgba(3, 31, 28, .18) 100%),
+        url("assets/al-soudah-hilltop.jpg") center/cover;
     }
     .hero::after {
       content: ""; position: absolute; z-index: -1; inset: auto -10% -8rem 35%; height: 15rem;
@@ -121,7 +120,7 @@
     .place-card.is-match { animation: rise .38s both; }
     .photo-link { position: relative; display: block; overflow: hidden; aspect-ratio: 1.24 / 1; border-radius: var(--radius); background: #d8e1d1; }
     .place-card:nth-child(2) .photo-link, .place-card:nth-child(7) .photo-link { aspect-ratio: 1.85 / 1; }
-    .photo-link img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .55s ease; }
+    .photo-link img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: var(--image-position, center); transition: transform .55s ease; }
     .photo-link:hover img { transform: scale(1.045); }
     .card-topline { position: absolute; top: 1rem; left: 1rem; right: 1rem; display: flex; justify-content: space-between; gap: .5rem; align-items: start; }
     .category { display: inline-flex; padding: .38rem .6rem; border-radius: 999px; background: rgba(255, 253, 250, .91); color: var(--pine); font: 500 .68rem var(--mono); text-transform: uppercase; letter-spacing: .08em; }
@@ -265,21 +264,20 @@
 
   <footer>
     <span class="footer-brand">Abha, in season</span>
-    <span class="source-note">A hand-picked visual guide. Weather, opening times and road access can change — check before you go.</span>
+    <span class="source-note">A hand-picked visual guide. <a href="README.md#image-credits-and-licences">Image credits &amp; licences</a> · Weather, opening times and road access can change — check before you go.</span>
   </footer>
 
   <script>
     const places = [
-      { id: 1, name: "Al Soudah", type: "nature", category: "Nature", months: ["Jun", "Jul", "Aug", "Sep"], best: "Jun — Sep", note: "Cool mist, tall junipers and the highest views in Saudi Arabia.", map: "Al Soudah, Saudi Arabia", image: "https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=85", time: "morning" },
-      { id: 2, name: "Rijal Almaa", type: "heritage", category: "Heritage", months: ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar"], best: "Oct — Mar", note: "A storybook village of stone towers, coloured windows and mountain air.", map: "Rijal Almaa Heritage Village, Saudi Arabia", image: "https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=1500&q=85", time: "evening" },
-      { id: 3, name: "Abha Dam Lake", type: "nature", category: "Nature", months: ["Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"], best: "Mar — Oct", note: "A gentle waterside pause, with picnic spots and mountain silhouettes.", map: "Abha Dam Lake, Saudi Arabia", image: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1200&q=85", time: "morning" },
-      { id: 4, name: "Al Muftaha Village", type: "heritage", category: "Heritage", months: ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar"], best: "Oct — Mar", note: "Traditional Asiri facades, art galleries and painted geometric details.", map: "Al Muftaha Village, Abha, Saudi Arabia", image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85", time: "evening" },
-      { id: 5, name: "Art Street", type: "food", category: "Food + culture", months: ["Jun", "Jul", "Aug", "Sep"], best: "Jun — Sep", note: "Take the long way: murals, shaded café tables and a lively evening stroll.", map: "Art Street, Abha, Saudi Arabia", image: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85", time: "lunch" },
-      { id: 6, name: "Habala Village", type: "heritage", category: "Heritage", months: ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr"], best: "Oct — Apr", note: "A cliffside village whose old stone homes seem to hold onto the mountain.", map: "Habala Village, Saudi Arabia", image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1300&q=85", time: "morning" },
-      { id: 7, name: "Aseer National Park", type: "nature", category: "Nature", months: ["Jun", "Jul", "Aug", "Sep", "Oct"], best: "Jun — Oct", note: "Wide green valleys and pine-scented roads made for a window-down drive.", map: "Aseer National Park, Saudi Arabia", image: "assets/aseer-sarawat-mountains.jpg", time: "morning" },
-      { id: 8, name: "Shamsan Ottoman Castle", type: "heritage", category: "Heritage", months: ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar"], best: "Oct — Mar", note: "A small historic lookout with a fine view across the city and hills.", map: "Shamsan Ottoman Castle, Abha, Saudi Arabia", image: "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=85", time: "evening" },
-      { id: 9, name: "Al Habbala Viewpoint", type: "nature", category: "Nature", months: ["Jun", "Jul", "Aug", "Sep", "Oct"], best: "Jun — Oct", note: "Come for the clouds rolling below the ridge — bring a warm layer.", map: "Al Habbala Viewpoint, Saudi Arabia", image: "https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=1200&q=85", time: "evening" },
-      { id: 10, name: "Al Qura Restaurant", type: "food", category: "Food", months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], best: "All year", note: "Make lunch about regional flavours, warm bread and a table that lingers.", map: "Al Qura Restaurant, Abha, Saudi Arabia", image: "https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1200&q=85", time: "lunch" }
+      { id: 1, name: "Al Soudah", type: "nature", category: "Nature", months: ["Jun", "Jul", "Aug", "Sep"], best: "Jun — Sep", note: "Cool mist and juniper woodland at Al Souda Hill top in Abha.", map: "Al Soudah, Saudi Arabia", image: "assets/al-soudah-hilltop.jpg", alt: "Juniper trees at Al Souda Hill top in Abha, Saudi Arabia", width: 4608, height: 2592, position: "center", time: "morning" },
+      { id: 2, name: "Rijal Almaa", type: "heritage", category: "Heritage", months: ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar"], best: "Oct — Mar", note: "Stone towers and coloured windows in the historic village below the Asir mountains.", map: "Rijal Almaa Heritage Village, Saudi Arabia", image: "assets/rijal-almaa-village.jpg", alt: "Stone towers and coloured windows at Rijal Almaa Heritage Village in Asir", width: 4032, height: 3024, position: "center 68%", time: "evening" },
+      { id: 3, name: "Abha Dam Lake", type: "nature", category: "Nature", months: ["Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct"], best: "Mar — Oct", note: "A waterside pause at Abha Dam Lake, framed by the city’s surrounding hills.", map: "Abha Dam Lake, Saudi Arabia", image: "assets/abha-dam-lake.jpg", alt: "Abha Dam Lake in Saudi Arabia", width: 4000, height: 3000, position: "center", time: "morning" },
+      { id: 4, name: "Al Muftaha Village", type: "heritage", category: "Heritage", months: ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar"], best: "Oct — Mar", note: "Traditional architecture at Al-Muftaha Village, one of Asir’s heritage sites.", map: "Al Muftaha Village, Abha, Saudi Arabia", image: "assets/al-muftaha-village.jpg", alt: "Traditional architecture at Al-Muftaha Village in the Asir Region", width: 4000, height: 3000, position: "center", time: "evening" },
+      { id: 5, name: "Haneeth", type: "food", category: "Food", months: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"], best: "All year", note: "A traditional southern Saudi dish, strongly associated with the food culture of Asir.", map: "Traditional restaurants, Abha, Saudi Arabia", image: "assets/haneeth-rice.jpg", alt: "A serving of haneeth rice", width: 4000, height: 3000, position: "center", time: "lunch" },
+      { id: 6, name: "Habala Valley viewpoint", type: "nature", category: "Nature", months: ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar", "Apr"], best: "Oct — Apr", note: "A wide view over Habala Valley near Abha, photographed from the cable car route.", map: "Habala Valley, Saudi Arabia", image: "assets/habala-valley-viewpoint.jpg", alt: "View over Habala Valley near Abha from a cable car", width: 1600, height: 1063, position: "center", time: "morning" },
+      { id: 7, name: "Asir Mountains", type: "nature", category: "Nature", months: ["Jun", "Jul", "Aug", "Sep", "Oct"], best: "Jun — Oct", note: "The ridges and valleys of the Asir Mountains in southern Saudi Arabia.", map: "Asir Mountains, Saudi Arabia", image: "assets/asir-mountains.jpg", alt: "Mountain landscape in the Asir Mountains, Saudi Arabia", width: 1200, height: 675, position: "center", time: "morning" },
+      { id: 8, name: "Shamsan Castle", type: "heritage", category: "Heritage", months: ["Oct", "Nov", "Dec", "Jan", "Feb", "Mar"], best: "Oct — Mar", note: "Shamsan Castle, a historic hilltop fortification in Abha.", map: "Shamsan Ottoman Castle, Abha, Saudi Arabia", image: "assets/shamsan-castle.jpg", alt: "Shamsan Castle in Abha, Saudi Arabia", width: 4000, height: 3000, position: "center", time: "evening" },
+      { id: 9, name: "Abha city", type: "heritage", category: "City", months: ["Jun", "Jul", "Aug", "Sep", "Oct"], best: "Jun — Oct", note: "A city view of Abha, the mountain capital of the Asir Region.", map: "Abha, Saudi Arabia", image: "assets/abha-city.jpg", alt: "City view of Abha, Saudi Arabia", width: 813, height: 444, position: "center", time: "evening" }
     ];
 
     const grid = document.querySelector("#places-grid");
@@ -295,7 +293,7 @@
       const months = place.months.join(" ");
       return `<article class="place-card is-match" data-type="${place.type}" data-months="${months}">
         <a class="photo-link" href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(place.map)}" target="_blank" rel="noopener noreferrer" aria-label="Open ${place.name} in Google Maps">
-          <img src="${place.image}" alt="Scenic image representing ${place.name}" width="1200" height="900" loading="lazy">
+          <img src="${place.image}" alt="${place.alt}" width="${place.width}" height="${place.height}" loading="lazy" decoding="async" style="--image-position: ${place.position};">
           <span class="card-topline"><span class="category">${place.category}</span><span class="number">0${place.id}</span></span>
         </a>
         <div class="card-content">
